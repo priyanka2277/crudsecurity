@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+</head>
+<body>
+<div class="header">
+    <h1>User Dashboard</h1>
+</div>
+<div class="container">
+    <h1>Welcome<span th:text="${username}"></span></h1>
+    <a th:href="@{/user/edit}">Edit</a>
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="product:${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
